@@ -14,24 +14,28 @@ public class TUGAS_Data_Nilai {
         BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
         
         // DEKLARASI
-            String[] nama = new String[2];
-            String[] nim = new String[2];
-            String[] keterangan = new String[2];
-            String pertanyaan;
-            int[] nilaiAlgoritma = new int[2];
-            int[] nilaiBInd = new int[2];
-            int[] nilaiBIngg = new int[2];
-            int[] jumlahNilai = new int[2];
-            int[] nilaiRata = new int[2];
+            String[] nama = new String[20];
+            String[] nim = new String[20];
+            String[] keterangan = new String[20];
+            int[] nilaiAlgoritma = new int[20];
+            int[] nilaiBInd = new int[20];
+            int[] nilaiBIngg = new int[20];
+            int[] jumlahNilai = new int[20];
+            int[] nilaiRata = new int[20];
             int i=0,x,b=0;
-            Boolean jawaban = true;
 
         // INPUT
             System.out.println("===== Program Data Penilaian =====");
             System.out.print(" Banyak data : ");
                 b = Integer.parseInt(input.readLine());
             System.out.println("==================================");
+                if(b>20){
+                    System.out.println(" Data hanya bisa diisi sampai 20");
+                    System.out.println("==================================");
+                    System.exit(0);
+                }
                 
+            
             for(i=0;i<b;i++){
                 x=1+i;
             
@@ -71,7 +75,7 @@ public class TUGAS_Data_Nilai {
             for(i=0;i<b;i++){
                 x=1+i;
                 
-                System.out.println("  "+x + ".       "+nim[i] + "              "+nama[i] + "               "+nilaiAlgoritma[i] + "     "+nilaiBInd[i] + "   "+nilaiBIngg[i] + "   "+jumlahNilai[i] + "   "+nilaiRata[i] + "   "+keterangan[i]);
+                System.out.println("  "+x + ".       "+nim[i] + "              "+nama[i] + "               "+nilaiAlgoritma[i] + "          "+nilaiBInd[i] + "        "+nilaiBIngg[i] + "        "+jumlahNilai[i] + "       "+nilaiRata[i] + "   "+keterangan[i]);
             }
             
             System.out.println("==========================================================================================================\n");
