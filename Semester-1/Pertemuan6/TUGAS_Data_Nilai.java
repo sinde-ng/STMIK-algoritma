@@ -23,17 +23,23 @@ public class TUGAS_Data_Nilai {
             int[] jumlahNilai = new int[20];
             int[] nilaiRata = new int[20];
             int i=0,x,b=0;
+            Boolean banyakData = true;
 
         // INPUT
             System.out.println("===== Program Data Penilaian =====");
-            System.out.print(" Banyak data : ");
-                b = Integer.parseInt(input.readLine());
-            System.out.println("==================================");
-                if(b>20){
-                    System.out.println(" Data hanya bisa diisi sampai 20");
-                    System.out.println("==================================");
-                    System.exit(0);
-                }
+            while(banyakData){
+                System.out.print(" Banyak data : ");
+                    b = Integer.parseInt(input.readLine());
+                        if(b>20){
+                            System.out.println("----------------------------------");
+                            System.out.println(" Data hanya bisa diisi sampai 20");
+                            System.out.println("==================================");
+                            banyakData=true;
+                        } else {
+                            System.out.println("==================================");
+                            banyakData=false;
+                        }
+            }
                 
             
             for(i=0;i<b;i++){
