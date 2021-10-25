@@ -14,32 +14,24 @@ public class TUGAS_Data_Nilai {
         BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
         
         // DEKLARASI
-            String[] nama = new String[20];
-            String[] nim = new String[20];
-            String[] keterangan = new String[20];
-            int[] nilaiAlgoritma = new int[20];
-            int[] nilaiBInd = new int[20];
-            int[] nilaiBIngg = new int[20];
-            int[] jumlahNilai = new int[20];
-            int[] nilaiRata = new int[20];
             int i=0,x,b=0;
-            Boolean banyakData = true;
 
         // INPUT
             System.out.println("===== Program Data Penilaian =====");
-            while(banyakData){
                 System.out.print(" Banyak data : ");
                     b = Integer.parseInt(input.readLine());
-                        if(b>20){
-                            System.out.println("----------------------------------");
-                            System.out.println(" Data hanya bisa diisi sampai 20");
-                            System.out.println("==================================");
-                            banyakData=true;
-                        } else {
-                            System.out.println("==================================");
-                            banyakData=false;
-                        }
-            }
+                    
+                    // DEKLARASI
+                        String[] nama = new String[b];
+                        String[] nim = new String[b];
+                        String[] keterangan = new String[b];
+                        int[] nilaiAlgoritma = new int[b];
+                        int[] nilaiBInd = new int[b];
+                        int[] nilaiBIngg = new int[b];
+                        int[] jumlahNilai = new int[b];
+                        int[] nilaiRata = new int[b];
+                        
+            System.out.println("==================================");
                 
             
             for(i=0;i<b;i++){
@@ -47,7 +39,7 @@ public class TUGAS_Data_Nilai {
             
                 System.out.print(x + ". Masukkan Nama : ");
                     nama[i] = input.readLine();
-                System.out.print("   Masukkan NIM : ");
+                System.out.print("   Masukkan NIM  : ");
                     nim[i] = input.readLine();
                     
                 System.out.println("   Masukkan Nilai");
@@ -58,6 +50,8 @@ public class TUGAS_Data_Nilai {
                     System.out.print("     c. B. Inggris   : ");
                         nilaiBIngg[i] = Integer.parseInt(input.readLine());
             }
+            
+            System.out.println("==================================");
             
         // PROSES
             for(i=0;i<b;i++){
@@ -74,14 +68,15 @@ public class TUGAS_Data_Nilai {
             }
             
         // OUTPUT
-            System.out.print("----------------------------------------------------------------------------------------------------------\n"
+            System.out.print("\n"
+                           + "----------------------------------------------------------------------------------------------------------\n"
                            + "| NO |    NIM    |        NAMA        | ALGORITMA | B INDONESIA | B INGGRIS | JUMLAH | RATA | KETERANGAN |\n"
                            + "----------------------------------------------------------------------------------------------------------\n");
             
             for(i=0;i<b;i++){
                 x=1+i;
                 
-                System.out.println("  "+x + ".       "+nim[i] + "              "+nama[i] + "               "+nilaiAlgoritma[i] + "          "+nilaiBInd[i] + "        "+nilaiBIngg[i] + "        "+jumlahNilai[i] + "       "+nilaiRata[i] + "   "+keterangan[i]);
+                System.out.println("  "+x + ".      "+nim[i] + "            "+nama[i] + "               "+nilaiAlgoritma[i] + "          "+nilaiBInd[i] + "        "+nilaiBIngg[i] + "        "+jumlahNilai[i] + "       "+nilaiRata[i] + "   "+keterangan[i]);
             }
             
             System.out.println("==========================================================================================================\n");
