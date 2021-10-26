@@ -15,11 +15,20 @@ public class TUGAS_Data_Nilai {
         
         // DEKLARASI
             int i=0,x,b=0;
+            Boolean mengulang=true;
 
         // INPUT
             System.out.println("===== Program Data Penilaian =====");
-                System.out.print(" Banyak data : ");
-                    b = Integer.parseInt(input.readLine());
+                while(mengulang){
+                    System.out.print(" Banyak data : ");
+                        b = Integer.parseInt(input.readLine());
+                            if(b<1){
+                                System.out.println("=============================ERROR");
+                                mengulang=true;
+                            } else{
+                                mengulang=false;
+                            }
+                }
                     
                     // DEKLARASI
                         String[] nama = new String[b];
