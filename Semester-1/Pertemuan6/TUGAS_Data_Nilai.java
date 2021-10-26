@@ -25,9 +25,7 @@ public class TUGAS_Data_Nilai {
                             if(b<1){
                                 System.out.println("=============================ERROR");
                                 mengulang=true;
-                            } else{
-                                mengulang=false;
-                            }
+                            } else{mengulang=false;}
                 }
                     
                     // DEKLARASI
