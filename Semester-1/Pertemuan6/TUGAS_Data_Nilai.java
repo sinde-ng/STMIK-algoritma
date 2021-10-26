@@ -15,7 +15,7 @@ public class TUGAS_Data_Nilai {
         
         // DEKLARASI
             int i=0,x,b=0;
-            Boolean mengulang=true;
+            Boolean mengulang=true,panjangNama=true,panjangNim=true,algo=true,indo=true,ingg=true;
 
         // INPUT
             System.out.println("===== Program Data Penilaian =====");
@@ -47,17 +47,64 @@ public class TUGAS_Data_Nilai {
                 x=1+i;
             
                 System.out.print(x + ". Masukkan Nama : ");
-                    nama[i] = input.readLine();
-                System.out.print("   Masukkan NIM  : ");
-                    nim[i] = input.readLine();
+                    while(panjangNama){
+                        nama[i] = input.readLine();
+                            if(nama[i].length()>5){
+                                System.out.println("--- !!! Karakter tidak boleh lebih dari 5");
+                                System.out.print("   Masukkan Nama : ");
+                                panjangNama=true;
+                            } else{panjangNama=false;}
+                    }
+                    
+                while(panjangNim){
+                    System.out.print("   Masukkan NIM  : ");
+                        nim[i] = input.readLine();
+                            if(nim[i].length()>5){
+                                System.out.println("--- !!! Karakter tidak boleh lebih dari 5");
+                                panjangNama=true;
+                            } else{panjangNim=false;}
+                }
                     
                 System.out.println("   Masukkan Nilai");
                     System.out.print("     a. Algoritma    : ");
-                        nilaiAlgoritma[i] = Integer.parseInt(input.readLine());
+                        while(algo){
+                            nilaiAlgoritma[i] = Integer.parseInt(input.readLine());
+                                if(nilaiAlgoritma[i]<0){
+                                    System.out.println("--- !!! Angka yang anda masukkan kurang dari 0");
+                                    System.out.print("        Algoritma    : ");
+                                    algo=true;
+                                } else if(nilaiAlgoritma[i]>100){
+                                    System.out.println("--- !!! Angka yang anda masukkan lebih dari 100");
+                                    System.out.print("        Algoritma    : ");
+                                    algo=true;
+                                } else {algo=false;}
+                        }
                     System.out.print("     b. B. Indonesia : ");
-                        nilaiBInd[i] = Integer.parseInt(input.readLine());
+                        while(indo){
+                            nilaiBInd[i] = Integer.parseInt(input.readLine());
+                                if(nilaiBInd[i]<0){
+                                    System.out.println("--- !!! Angka yang anda masukkan kurang dari 0");
+                                    System.out.print("        B. Indonesia : ");
+                                    indo=true;
+                                } else if(nilaiAlgoritma[i]>100){
+                                    System.out.println("--- !!! Angka yang anda masukkan lebih dari 100");
+                                    System.out.print("        B. Indonesia : ");
+                                    indo=true;
+                                } else {indo=false;}
+                        }
                     System.out.print("     c. B. Inggris   : ");
-                        nilaiBIngg[i] = Integer.parseInt(input.readLine());
+                        while(ingg){
+                            nilaiBIngg[i] = Integer.parseInt(input.readLine());
+                                if(nilaiBIngg[i]<0){
+                                    System.out.println("--- !!! Angka yang anda masukkan kurang dari 0");
+                                    System.out.print("        B. Inggris   : ");
+                                    ingg=true;
+                                } else if(nilaiBIngg[i]>100){
+                                    System.out.println("--- !!! Angka yang anda masukkan lebih dari 100");
+                                    System.out.print("        B. Inggris   : ");
+                                    ingg=true;
+                                } else {ingg=false;}
+                        }
             }
             
             System.out.println("==================================");
