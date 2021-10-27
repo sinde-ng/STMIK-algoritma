@@ -7,121 +7,108 @@ import java.io.*;
  * 25 October 2021
  */
 
-public class TUGAS_Data_Nilai {
-    
-    public static void main(String[] args) throws IOException {
-    
+public class TUGAS {
+
+    public static void main(String[] args) throws IOException{
         BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
         
         // DEKLARASI
-            int i=0,x,b=0;
-            Boolean mengulang=true,panjangNama=true,panjangNim=true,algo=true,indo=true,ingg=true;
-
+            // utama
+                int i=0,b=0,x;
+                Boolean banyakData=true;
+            // tier
+                int tertinggi=0,terendah=0,
+                    tAlgo=0,rAlgo=0,
+                    tIndo=0,rIndo=0,
+                    tIngg=0,rIngg=0;
+        
         // INPUT
-            System.out.println("===== Program Data Penilaian =====");
-                while(mengulang){
-                    System.out.print(" Banyak data : ");
+            System.out.println("=== Program Data Penilaian ===");
+                while(banyakData){
+                    System.out.print(" Banyak Data : ");
                         b = Integer.parseInt(input.readLine());
                             if(b<1){
                                 System.out.println("=============================ERROR");
-                                mengulang=true;
-                            } else{mengulang=false;}
+                                banyakData=true;
+                            }else{banyakData=false;}
                 }
-                    
-                    // DEKLARASI
+                
+                    // DEKLARASI ARRAY
                         String[] nama = new String[b];
                         String[] nim = new String[b];
-                        String[] keterangan = new String[b];
-                        int[] nilaiAlgoritma = new int[b];
-                        int[] nilaiBInd = new int[b];
-                        int[] nilaiBIngg = new int[b];
-                        int[] jumlahNilai = new int[b];
-                        int[] nilaiRata = new int[b];
+                        String[] ket = new String[b];
+                            int[] nilaiAlgoritma = new int[b];
+                            int[] nilaiBInd = new int[b];
+                            int[] nilaiBIngg = new int[b];
+                            int[] jumlahNilai = new int[b];
+                            int[] nilaiRata = new int[b];
+                        System.out.println("==================================");
                         
-            System.out.println("==================================");
-                
-            
-            for(i=0;i<b;i++){
-                x=1+i;
-            
-                System.out.print(x + ". Masukkan Nama : ");
-                    while(panjangNama){
+            for(i=0;i<b;i++){    
+                x=i+1;
+                // DATA DIRI
+                    System.out.print(x + ". Masukkan Nama : ");
                         nama[i] = input.readLine();
-                            if(nama[i].length()>5){
-                                System.out.println("--- !!! Karakter tidak boleh lebih dari 5");
-                                System.out.print("   Masukkan Nama : ");
-                                panjangNama=true;
-                            } else{panjangNama=false;}
-                    }
-                    
-                while(panjangNim){
                     System.out.print("   Masukkan NIM  : ");
                         nim[i] = input.readLine();
-                            if(nim[i].length()>5){
-                                System.out.println("--- !!! Karakter tidak boleh lebih dari 5");
-                                panjangNama=true;
-                            } else{panjangNim=false;}
-                }
-                    
-                System.out.println("   Masukkan Nilai");
-                    System.out.print("     a. Algoritma    : ");
-                        while(algo){
+                // NILAI
+                    System.out.println("   Masukkan Nilai");
+                        System.out.print("     a. Algoritma    : ");
                             nilaiAlgoritma[i] = Integer.parseInt(input.readLine());
-                                if(nilaiAlgoritma[i]<0){
-                                    System.out.println("--- !!! Angka yang anda masukkan kurang dari 0");
-                                    System.out.print("        Algoritma    : ");
-                                    algo=true;
-                                } else if(nilaiAlgoritma[i]>100){
-                                    System.out.println("--- !!! Angka yang anda masukkan lebih dari 100");
-                                    System.out.print("        Algoritma    : ");
-                                    algo=true;
-                                } else {algo=false;}
-                        }
-                    System.out.print("     b. B. Indonesia : ");
-                        while(indo){
+                        System.out.print("     b. B. Indonesia : ");
                             nilaiBInd[i] = Integer.parseInt(input.readLine());
-                                if(nilaiBInd[i]<0){
-                                    System.out.println("--- !!! Angka yang anda masukkan kurang dari 0");
-                                    System.out.print("        B. Indonesia : ");
-                                    indo=true;
-                                } else if(nilaiAlgoritma[i]>100){
-                                    System.out.println("--- !!! Angka yang anda masukkan lebih dari 100");
-                                    System.out.print("        B. Indonesia : ");
-                                    indo=true;
-                                } else {indo=false;}
-                        }
-                    System.out.print("     c. B. Inggris   : ");
-                        while(ingg){
+                        System.out.print("     c. B. Inggris   : ");
                             nilaiBIngg[i] = Integer.parseInt(input.readLine());
-                                if(nilaiBIngg[i]<0){
-                                    System.out.println("--- !!! Angka yang anda masukkan kurang dari 0");
-                                    System.out.print("        B. Inggris   : ");
-                                    ingg=true;
-                                } else if(nilaiBIngg[i]>100){
-                                    System.out.println("--- !!! Angka yang anda masukkan lebih dari 100");
-                                    System.out.print("        B. Inggris   : ");
-                                    ingg=true;
-                                } else {ingg=false;}
-                        }
             }
-            
-            System.out.println("==================================");
-            
+        
         // PROSES
             for(i=0;i<b;i++){
-                // PENJUMLAHAN
-                    jumlahNilai[i] = nilaiAlgoritma[i]+nilaiBInd[i]+nilaiBIngg[i];
-                // MENGHITUNG RATA - RATA
-                    nilaiRata[i] = jumlahNilai[i]/3;
-                // KETERANGAN
-                    if(nilaiRata[i]<60){
-                        keterangan[i] = "MENGULANG";
-                    } else{
-                        keterangan[i] = "BERHASIL";
-                    }
+                // PERHITUNGAN
+                    // JUMLAH
+                        jumlahNilai[i] = nilaiAlgoritma[i] + nilaiBInd[i] + nilaiBIngg[i];
+                    // RATA RATA
+                        nilaiRata[i] = jumlahNilai[i] / 3;
+                        
+                // PENGGOLONGAN
+                    // KETERANGAN
+                        if(nilaiRata[i]<60){
+                            ket[i] = "Mengulang";
+                        } else {ket[i] = "Berhasil";}
+                    // TETINGGI dan TERENDAH
+                        // NILAI ALGORITMA
+                            tAlgo = nilaiAlgoritma[0];
+                            rAlgo = nilaiAlgoritma[0];
+                                for(i=0;i<b;i++){
+                                    if(nilaiAlgoritma[i]>tAlgo){
+                                        tAlgo = nilaiAlgoritma[i];
+                                    } else if(nilaiAlgoritma[i]<rAlgo){
+                                        rAlgo = nilaiAlgoritma[i];
+                                    }
+                                }
+                        // NILAI B INDO
+                            tIndo = nilaiBInd[0];
+                            rIndo = nilaiBInd[0];
+                                for(i=0;i<b;i++){
+                                    if(nilaiBInd[i]>tIndo){
+                                        tIndo = nilaiBInd[i];
+                                    } else if(nilaiBInd[i]<rIndo){
+                                        rIndo = nilaiBInd[i];
+                                    }   
+                                }
+                        // NILAI B INGG
+                            tIngg = nilaiBIngg[0];
+                            rIngg = nilaiBIngg[0];
+                                for(i=0;i<b;i++){
+                                    if(nilaiBIngg[i]>tIngg){
+                                        tIngg = nilaiBIngg[i];
+                                    } else if(nilaiBIngg[i]<tIngg){
+                                        rIngg = nilaiBIngg[i];
+                                    }
+                                }
             }
             
         // OUTPUT
+            
             System.out.print("\n"
                            + "----------------------------------------------------------------------------------------------------------\n"
                            + "| NO |    NIM    |        NAMA        | ALGORITMA | B INDONESIA | B INGGRIS | JUMLAH | RATA | KETERANGAN |\n"
@@ -130,9 +117,15 @@ public class TUGAS_Data_Nilai {
             for(i=0;i<b;i++){
                 x=1+i;
                 
-                System.out.println("  "+x + ".      "+nim[i] + "            "+nama[i] + "               "+nilaiAlgoritma[i] + "          "+nilaiBInd[i] + "        "+nilaiBIngg[i] + "        "+jumlahNilai[i] + "       "+nilaiRata[i] + "   "+keterangan[i]);
+                System.out.println("  "+x + ".      "+nim[i] + "            "+nama[i] + "               "+nilaiAlgoritma[i] + "          "+nilaiBInd[i] + "        "+nilaiBIngg[i] + "        "+jumlahNilai[i] + "       "+nilaiRata[i] + "   "+ket[i]);
             }
             
+            System.out.println("==========================================================================================================");
+            System.out.println("                 Nilai Tertinggi                |                        Nilai Terendah");
+            System.out.println("----------------------------------------------------------------------------------------------------------");
+            System.out.println(" Nilai Algoritma        : "+tAlgo + "                     Nilai Algoritma        : "+rAlgo);
+            System.out.println(" Nilai Bahasa Indonesia : "+tIndo + "                     Nilai Bahasa Indonesia : "+rIndo);
+            System.out.println(" Nilai Bahasa Inggris   : "+tIngg + "                     NilaiBahasa Inggris    : "+rIngg);
             System.out.println("==========================================================================================================\n");
     }
 }
