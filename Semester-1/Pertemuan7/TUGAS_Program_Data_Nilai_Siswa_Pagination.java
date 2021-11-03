@@ -52,6 +52,20 @@ public class TUGAS_Program_Data_Nilai_Siswa_Pagination {
                 System.out.print("      c. B. Inggris   : ");
                     nIngg[i] = Integer.parseInt(input.readLine());
                     
+        }
+        
+        System.out.println(" ");
+        System.out.println(" ");
+        // OUTPUT
+        
+        System.out.print("                                                          LAPORAN NILAI SISWA" +"\n"
+                        +" ------------------------------------------------------------------------------------------------------------------------------------------------------\n"
+                        +" | NO |   NIM   |       NAMA       |    ALGORITMA   |  B. Indonesia  |   B. Inggris   | JUMLAH | RATA - RATA | Grade |      Yudisium     | Keterangan |\n"
+                        +" |----|---------|------------------|----------------|----------------|----------------|--------|-------------|-------|-------------------|------------|\n");
+                                                                                                                                           
+        for(i=0;i<x;i++){
+            no=i+1;
+            
             // PERHITUNGAN
                 // SATUAN
                     jml[i] = nAlgo[i]+nIndo[i]+nIngg[i];
@@ -92,19 +106,6 @@ public class TUGAS_Program_Data_Nilai_Siswa_Pagination {
                     yud[i]="Mengulang";
                     ket[i]="Tidak Lulus";
                 }
-        }
-        
-        System.out.println(" ");
-        System.out.println(" ");
-        // OUTPUT
-        
-        System.out.print("                                                          LAPORAN NILAI SISWA" +"\n"
-                        +" ------------------------------------------------------------------------------------------------------------------------------------------------------\n"
-                        +" | NO |   NIM   |       NAMA       |    ALGORITMA   |  B. Indonesia  |   B. Inggris   | JUMLAH | RATA - RATA | Grade |      Yudisium     | Keterangan |\n"
-                        +" |----|---------|------------------|----------------|----------------|----------------|--------|-------------|-------|-------------------|------------|\n");
-                                                                                                                                           
-        for(i=0;i<x;i++){
-            no=i+1;
             
             System.out.printf(" |%-4s|%-9s|%-18s|%-16s|%-16s|%-16s|%-8s|%-13s|%-7s|%-19s|%-12s|\n"," "+no," "+nim[i]," "+nama[i],"       "+nAlgo[i],"       "+nIndo[i],"       "+nIngg[i]," "+jml[i],"      "+nRata[i],"   "+grd[i],""+yud[i]," "+ket[i]);
             
@@ -115,6 +116,8 @@ public class TUGAS_Program_Data_Nilai_Siswa_Pagination {
                 
                 System.out.println("\n Tekan enter untuk melanjutkan");
                     String jawab = input.readLine();
+                    
+                    sub_totalAlgo=0;sub_totalIndo=0;sub_totalIngg=0;
                 
                 System.out.print("\n                                                          LAPORAN NILAI SISWA\n"
                                 +" ------------------------------------------------------------------------------------------------------------------------------------------------------\n"
@@ -128,5 +131,3 @@ public class TUGAS_Program_Data_Nilai_Siswa_Pagination {
                         + "\n __________________________________________________________________________________________________________________________________________________\n");
     }
 }
-
-//
