@@ -44,6 +44,9 @@ public class Respon {
                         System.out.printf("|%-13s|%-21s|%-14s|\n","     "+no,"    "+namaBarang[i],"  "+kursIndonesia.format(hargaBarang[i]));
                     }
                 System.out.println("----------------------------------------------------\n");
+                
+                System.out.print("Nama        : ");
+                        nama = input.readLine();
             
             while(jawaban){
                 
@@ -51,8 +54,6 @@ public class Respon {
                     jmlData++;
                 
                 // INPUT
-                    System.out.print("Nama        : ");
-                        nama = input.readLine();
                     System.out.print("Kode Barang : ");
                         kode = Integer.parseInt(input.readLine());
                 
@@ -75,6 +76,7 @@ public class Respon {
                             System.out.print("Data Lagi [y/t] : ");
                                 tanya = input.readLine();
                                     if(tanya.equalsIgnoreCase("y")){
+                                        System.out.print("\n");
                                         jawaban = true;
                                     } else {jawaban = false;}
                                     
@@ -97,6 +99,7 @@ public class Respon {
                             System.out.print("Data Lagi [y/t] : ");
                                 tanya = input.readLine();
                                     if(tanya.equalsIgnoreCase("y")){
+                                        System.out.print("\n");
                                         jawaban = true;
                                     } else {jawaban = false;}
                                     
@@ -119,6 +122,7 @@ public class Respon {
                             System.out.print("Data Lagi [y/t] : ");
                                 tanya = input.readLine();
                                     if(tanya.equalsIgnoreCase("y")){
+                                        System.out.print("\n");
                                         jawaban = true;
                                     } else {jawaban = false;}
                                     
@@ -141,6 +145,7 @@ public class Respon {
                             System.out.print("Data Lagi [y/t] : ");
                                 tanya = input.readLine();
                                     if(tanya.equalsIgnoreCase("y")){
+                                        System.out.print("\n");
                                         jawaban = true;
                                     } else {jawaban = false;}
                                     
@@ -162,6 +167,7 @@ public class Respon {
                             System.out.print("Data Lagi [y/t] : ");
                                 tanya = input.readLine();
                                     if(tanya.equalsIgnoreCase("y")){
+                                        System.out.print("\n");
                                         jawaban = true;
                                     } else {jawaban = false;}
                                     
@@ -205,6 +211,7 @@ public class Respon {
                             System.out.print("Data Lagi [y/t] : ");
                                 tanya = input.readLine();
                                     if(tanya.equalsIgnoreCase("y")){
+                                        System.out.print("\n");
                                         jawaban = true;
                                     } else {jawaban = false;}
                                     
@@ -218,13 +225,15 @@ public class Respon {
             }
             
             // OUTPUT TERAKHIR
+                System.out.println("\nNama Pembeli : "+nama);
                 System.out.println("====================================================");
-                    System.out.println("\n     Item        : "+jmlData);
-                    System.out.println("     Total Harga : "+kursIndonesia.format(total));
-                    System.out.print("Bayar       : Rp");
+                    System.out.println("Item        : "+jmlData);
+                    System.out.println("Total Harga : "+kursIndonesia.format(total));
+                System.out.println("====================================================");
+                    System.out.print("                        Bayar       : Rp");
                         uang = Integer.parseInt(input.readLine());
                         kembalian = uang-total;
-                    System.out.println("Kembalian   : "+kursIndonesia.format(kembalian));
+                    System.out.println("                        Kembalian   : "+kursIndonesia.format(kembalian));
                 System.out.println("----------------------------------------------------\n");
     }
 }
